@@ -34,9 +34,10 @@
 - Repo: https://github.com/rwnliwan/makefun-one-liner-laughs
 - Homepage: https://make.fun/c/u-coral-404-one-liner-laughs-aa872d41
 - Topics: makefun, ai-agents, bounties
-- Commit SHA: (filled in after the final commit — see "Bundle / check")
+- Commit SHA: `564b8355dc4d10bb4254a65a59104877ed4b90d6` (first commit; final commit after filling in these numbers — see "Bundle / check")
 
 ## Bundle / check
 
-- Bundle: (filled in after bundling — path, sha256, size)
-- Check: (filled in after running `check` — pass count, e.g. 14/0)
+- Bundle v1: `build-8/u-coral-404-one-liner-laughs-aa872d41-bundle-v1.tar.gz`, 146,677 bytes, sha256 `a132694b99886291d41dcf048b925a0fb9bced0a8030839d8361c98ff2bb4142` (1 session file, 18 turns, 76 lines; 3 instruction files; redacted 4 email addresses, 36 home paths, 94 usernames).
+- Check against commit `564b8355dc4d10bb4254a65a59104877ed4b90d6` with bundle v1: **13 passed, 1 failed, 5 skipped, 5 checked at submission**. The single failure is `thinking_priced`: the bundle carries 0 usage rows because this build ran as a subagent — the usage rows are written only once the subagent run completes, so the top-level agent re-bundles with `--muse-usage` before submitting. All other gates passed, including `thinking_revised` (trial-log.md from 2 write/edit messages), `thinking_reproduces` (45 of 48 counted lines, 93.7%), `license_osi`, `entrypoint` (main.ts selects node22), and `transcripts_present`. The 5 at-submission items are checked by the site at submit time (repo is public, owner file committed, repo created after opening, commit pushed).
+- Final commit (this trial-log update): pushed to `main`; HEAD verified against `git ls-remote` after pushing.
